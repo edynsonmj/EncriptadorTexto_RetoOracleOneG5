@@ -38,7 +38,7 @@ function encriptarV2(stringEncriptar) {
         return "";
     }
     if (!esValidoTexto(textArea.value)) {
-        alert("has digitado caracteres especiales, intenta nuevamente");
+        alert("has digitado caracteres especiales, acentos o numero, intenta nuevamente");
         textArea.value = "";
         return "";
     }
@@ -105,8 +105,7 @@ function copiar() {
 
 function esValidoTexto(texto) {
     //const formato = /[´`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    // /^[a-z]*$/
-    const formato = /^[a-z]*$/;
+    const formato = /^[a-z\s]+$/
     let respuesta = formato.test(texto) ? true : false;
     return respuesta;
 }
